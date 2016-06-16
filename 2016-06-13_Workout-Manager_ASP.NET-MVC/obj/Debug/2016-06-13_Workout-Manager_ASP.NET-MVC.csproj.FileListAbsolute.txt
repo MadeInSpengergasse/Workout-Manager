@@ -173,6 +173,10 @@ C:\Users\Raphael\Documents\Visual Studio 2015\Projects\Workout-Manager\2016-06-1
 C:\Users\Raphael\Documents\Visual Studio 2015\Projects\Workout-Manager\2016-06-13_Workout-Manager_ASP.NET-MVC\bin\System.Web.WebPages.Razor.xml
 C:\Users\Raphael\Documents\Visual Studio 2015\Projects\Workout-Manager\2016-06-13_Workout-Manager_ASP.NET-MVC\bin\Antlr3.Runtime.pdb
 C:\Users\Raphael\Documents\Visual Studio 2015\Projects\Workout-Manager\2016-06-13_Workout-Manager_ASP.NET-MVC\bin\Newtonsoft.Json.xml
-C:\Users\Raphael\Documents\Visual Studio 2015\Projects\Workout-Manager\2016-06-13_Workout-Manager_ASP.NET-MVC\obj\Debug\2016-06-13_Workout-Manager_ASP.NET-MVC.csprojResolveAssemblyReference.cache
 C:\Users\Raphael\Documents\Visual Studio 2015\Projects\Workout-Manager\2016-06-13_Workout-Manager_ASP.NET-MVC\obj\Debug\2016-06-13_Workout-Manager_ASP.NET-MVC.dll
 C:\Users\Raphael\Documents\Visual Studio 2015\Projects\Workout-Manager\2016-06-13_Workout-Manager_ASP.NET-MVC\obj\Debug\2016-06-13_Workout-Manager_ASP.NET-MVC.pdb
+C:\Users\Raphael\Documents\Visual Studio 2015\Projects\Workout-Manager\2016-06-13_Workout-Manager_ASP.NET-MVC\bin\PagedList.dll
+C:\Users\Raphael\Documents\Visual Studio 2015\Projects\Workout-Manager\2016-06-13_Workout-Manager_ASP.NET-MVC\bin\PagedList.Mvc.dll
+C:\Users\Raphael\Documents\Visual Studio 2015\Projects\Workout-Manager\2016-06-13_Workout-Manager_ASP.NET-MVC\bin\PagedList.xml
+C:\Users\Raphael\Documents\Visual Studio 2015\Projects\Workout-Manager\2016-06-13_Workout-Manager_ASP.NET-MVC\bin\PagedList.Mvc.xml
+C:\Users\Raphael\Documents\Visual Studio 2015\Projects\Workout-Manager\2016-06-13_Workout-Manager_ASP.NET-MVC\obj\Debug\2016-06-13_Workout-Manager_ASP.NET-MVC.csprojResolveAssemblyReference.cache

@@ -1,4 +1,10 @@
-﻿@model IEnumerable<_2016_06_13_Workout_Manager_ASP.NET_MVC.Models.exercise>
+﻿@*@model IEnumerable<_2016_06_13_Workout_Manager_ASP.NET_MVC.Models.exercise>
+@using PagedList.Mvc;*@
+
+@model PagedList.IPagedList<_2016_06_13_Workout_Manager_ASP.NET_MVC.Models.exercise>
+@using PagedList.Mvc;
+
+ < link href = "~/Content/PagedList.css" rel = "stylesheet" type = "text/css" /> 
 
 @{
     ViewBag.Title = "Index";
@@ -6,9 +12,9 @@
 
 <h2>Index</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm("Index", "Exercise", FormMethod.Get)) {
     <p>
-        Find by name: @Html.TextBox("SearchString")
+        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string) )
         <input type="submit" value="Search" />
     </p>
 }
@@ -16,7 +22,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.ActionLink("Exercises names", "Index", new { sortOrder = ViewBag.NameSortParm })
+            @Html.ActionLink("Exercises names", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
         </th>
     </tr>
 
@@ -29,3 +35,7 @@
 }
 
 </table>
+<br/>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

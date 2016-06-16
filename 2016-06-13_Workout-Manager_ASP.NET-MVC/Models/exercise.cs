@@ -11,6 +11,7 @@ namespace _2016_06_13_Workout_Manager_ASP.NET_MVC.Models
 {
     using System;
     using System.Collections.Generic;
+    using PagedList;
     
     public partial class exercise
     {
