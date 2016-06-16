@@ -6,10 +6,17 @@
 
 <h2>Index</h2>
 
+@using (Html.BeginForm()) {
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.e_name)
+            @Html.ActionLink("Exercises names", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
     </tr>
 
