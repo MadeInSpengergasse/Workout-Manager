@@ -1,0 +1,46 @@
+﻿@model IEnumerable<_2016_06_13_Workout_Manager_ASP.NET_MVC.Models.workoutplanentry>
+
+@{
+    ViewBag.Title = "Your workoutplans";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Creation date
+        </th>
+        <th>
+            Scheduled on
+        </th>
+        <th>
+            Repeat
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.wpe_creationdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.wpe_scheduledate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.wpe_repeat)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.wpe_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.wpe_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.wpe_id })
+            </td>
+        </tr>
+    }
+
+</table>

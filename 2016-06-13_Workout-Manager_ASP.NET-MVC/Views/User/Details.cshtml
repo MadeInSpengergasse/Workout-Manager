@@ -1,0 +1,49 @@
+﻿@model _2016_06_13_Workout_Manager_ASP.NET_MVC.Models.user
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>user</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.u_password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.u_age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.u_height)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_height)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.u_weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_weight)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.u_name })
+</p>

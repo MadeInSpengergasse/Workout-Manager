@@ -9,14 +9,14 @@
           <Key>
             <PropertyRef Name="e_id" />
           </Key>
-          <Property Name="e_id" Type="smallint" Nullable="false" />
+          <Property Name="e_id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="e_name" Type="varchar" MaxLength="150" Nullable="false" />
         </EntityType>
         <EntityType Name="stepsdone">
           <Key>
             <PropertyRef Name="sd_id" />
           </Key>
-          <Property Name="sd_id" Type="tinyint" Nullable="false" />
+          <Property Name="sd_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="sd_e_exercise" Type="smallint" Nullable="false" />
           <Property Name="sd_wpe_workoutplanentry" Type="bigint" Nullable="false" />
         </EntityType>
@@ -34,14 +34,14 @@
           <Key>
             <PropertyRef Name="w_id" />
           </Key>
-          <Property Name="w_id" Type="tinyint" Nullable="false" />
+          <Property Name="w_id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="w_name" Type="varchar" MaxLength="150" Nullable="false" />
         </EntityType>
         <EntityType Name="workoutplanentry">
           <Key>
             <PropertyRef Name="wpe_id" />
           </Key>
-          <Property Name="wpe_id" Type="bigint" Nullable="false" />
+          <Property Name="wpe_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="wpe_w_workout" Type="tinyint" Nullable="false" />
           <Property Name="wpe_creationdate" Type="date" Nullable="false" />
           <Property Name="wpe_scheduledate" Type="date" Nullable="false" />
@@ -52,7 +52,7 @@
           <Key>
             <PropertyRef Name="ws_id" />
           </Key>
-          <Property Name="ws_id" Type="int" Nullable="false" />
+          <Property Name="ws_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ws_e_exercise" Type="smallint" Nullable="false" />
           <Property Name="ws_w_workout" Type="tinyint" Nullable="false" />
         </EntityType>
@@ -169,7 +169,7 @@
           <Key>
             <PropertyRef Name="e_id" />
           </Key>
-          <Property Name="e_id" Type="Int16" Nullable="false" />
+          <Property Name="e_id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="e_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="stepsdones" Relationship="Self.sd_e_exerciseconstr" FromRole="exercise" ToRole="stepsdone" />
           <NavigationProperty Name="workoutsteps" Relationship="Self.ws_e_exerciseconstr" FromRole="exercise" ToRole="workoutsteps" />
@@ -178,7 +178,7 @@
           <Key>
             <PropertyRef Name="sd_id" />
           </Key>
-          <Property Name="sd_id" Type="Byte" Nullable="false" />
+          <Property Name="sd_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="sd_e_exercise" Type="Int16" Nullable="false" />
           <Property Name="sd_wpe_workoutplanentry" Type="Int64" Nullable="false" />
           <NavigationProperty Name="exercise" Relationship="Self.sd_e_exerciseconstr" FromRole="stepsdone" ToRole="exercise" />
@@ -199,7 +199,7 @@
           <Key>
             <PropertyRef Name="w_id" />
           </Key>
-          <Property Name="w_id" Type="Byte" Nullable="false" />
+          <Property Name="w_id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="w_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="workoutplanentries" Relationship="Self.wpe_w_workoutconstr" FromRole="workout" ToRole="workoutplanentry" />
           <NavigationProperty Name="workoutsteps" Relationship="Self.ws_w_workoutconstr" FromRole="workout" ToRole="workoutsteps" />
@@ -208,7 +208,7 @@
           <Key>
             <PropertyRef Name="wpe_id" />
           </Key>
-          <Property Name="wpe_id" Type="Int64" Nullable="false" />
+          <Property Name="wpe_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="wpe_w_workout" Type="Byte" Nullable="false" />
           <Property Name="wpe_creationdate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="wpe_scheduledate" Type="DateTime" Nullable="false" Precision="0" />
@@ -222,7 +222,7 @@
           <Key>
             <PropertyRef Name="ws_id" />
           </Key>
-          <Property Name="ws_id" Type="Int32" Nullable="false" />
+          <Property Name="ws_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ws_e_exercise" Type="Int16" Nullable="false" />
           <Property Name="ws_w_workout" Type="Byte" Nullable="false" />
           <NavigationProperty Name="exercise" Relationship="Self.ws_e_exerciseconstr" FromRole="workoutsteps" ToRole="exercise" />

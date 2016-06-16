@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TechnikmarktModelStoreContainer" CdmEntityContainer="TechnikmarktEntities">
+    <EntitySetMapping Name="exercises">
+      <EntityTypeMapping TypeName="TechnikmarktModel.exercise">
+        <MappingFragment StoreEntitySet="exercise">
+          <ScalarProperty Name="e_id" ColumnName="e_id" />
+          <ScalarProperty Name="e_name" ColumnName="e_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stepsdones">
+      <EntityTypeMapping TypeName="TechnikmarktModel.stepsdone">
+        <MappingFragment StoreEntitySet="stepsdone">
+          <ScalarProperty Name="sd_id" ColumnName="sd_id" />
+          <ScalarProperty Name="sd_e_exercise" ColumnName="sd_e_exercise" />
+          <ScalarProperty Name="sd_wpe_workoutplanentry" ColumnName="sd_wpe_workoutplanentry" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="TechnikmarktModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="u_name" ColumnName="u_name" />
+          <ScalarProperty Name="u_password" ColumnName="u_password" />
+          <ScalarProperty Name="u_age" ColumnName="u_age" />
+          <ScalarProperty Name="u_height" ColumnName="u_height" />
+          <ScalarProperty Name="u_weight" ColumnName="u_weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="workouts">
+      <EntityTypeMapping TypeName="TechnikmarktModel.workout">
+        <MappingFragment StoreEntitySet="workout">
+          <ScalarProperty Name="w_id" ColumnName="w_id" />
+          <ScalarProperty Name="w_name" ColumnName="w_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="workoutplanentries">
+      <EntityTypeMapping TypeName="TechnikmarktModel.workoutplanentry">
+        <MappingFragment StoreEntitySet="workoutplanentry">
+          <ScalarProperty Name="wpe_id" ColumnName="wpe_id" />
+          <ScalarProperty Name="wpe_w_workout" ColumnName="wpe_w_workout" />
+          <ScalarProperty Name="wpe_creationdate" ColumnName="wpe_creationdate" />
+          <ScalarProperty Name="wpe_scheduledate" ColumnName="wpe_scheduledate" />
+          <ScalarProperty Name="wpe_repeat" ColumnName="wpe_repeat" />
+          <ScalarProperty Name="wpe_u_user" ColumnName="wpe_u_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="workoutsteps">
+      <EntityTypeMapping TypeName="TechnikmarktModel.workoutstep">
+        <MappingFragment StoreEntitySet="workoutsteps">
+          <ScalarProperty Name="ws_id" ColumnName="ws_id" />
+          <ScalarProperty Name="ws_e_exercise" ColumnName="ws_e_exercise" />
+          <ScalarProperty Name="ws_w_workout" ColumnName="ws_w_workout" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

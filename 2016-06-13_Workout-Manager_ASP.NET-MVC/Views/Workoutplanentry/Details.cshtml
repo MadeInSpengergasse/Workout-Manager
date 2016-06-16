@@ -1,0 +1,58 @@
+﻿@model _2016_06_13_Workout_Manager_ASP.NET_MVC.Models.workoutplanentry
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>workoutplanentry</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.wpe_creationdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wpe_creationdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wpe_scheduledate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wpe_scheduledate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wpe_repeat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wpe_repeat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user.u_password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user.u_password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.workout.w_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.workout.w_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.wpe_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

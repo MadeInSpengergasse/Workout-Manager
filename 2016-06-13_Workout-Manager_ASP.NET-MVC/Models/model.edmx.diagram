@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a1987fe114f04f14a90444c2685cd4ea" Name="Diagram1" ZoomLevel="86">
-        <EntityTypeShape EntityType="TechnikmarktModel.exercise" Width="1.5" PointX="0.5" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechnikmarktModel.stepsdone" Width="1.5" PointX="7.5" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechnikmarktModel.user" Width="1.5" PointX="3" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechnikmarktModel.workout" Width="1.5" PointX="0.5" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechnikmarktModel.workoutplanentry" Width="1.5" PointX="7.5" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechnikmarktModel.workoutstep" Width="1.5" PointX="2.625" PointY="4.875" IsExpanded="true" />
+      <Diagram DiagramId="636e97e30c02456ca14537662cf2b2f3" Name="Diagram1">
+        <EntityTypeShape EntityType="TechnikmarktModel.exercise" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechnikmarktModel.stepsdone" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechnikmarktModel.user" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechnikmarktModel.workout" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechnikmarktModel.workoutplanentry" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechnikmarktModel.workoutstep" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
         <AssociationConnector Association="TechnikmarktModel.sd_e_exerciseconstr" ManuallyRouted="false" />
         <AssociationConnector Association="TechnikmarktModel.ws_e_exerciseconstr" ManuallyRouted="false" />
         <AssociationConnector Association="TechnikmarktModel.sd_wpe_workoutplanentryconstr" ManuallyRouted="false" />

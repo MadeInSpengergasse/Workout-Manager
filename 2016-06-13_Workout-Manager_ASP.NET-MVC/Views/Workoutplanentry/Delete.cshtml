@@ -1,0 +1,64 @@
+﻿@model _2016_06_13_Workout_Manager_ASP.NET_MVC.Models.workoutplanentry
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>workoutplanentry</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.wpe_creationdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wpe_creationdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wpe_scheduledate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wpe_scheduledate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wpe_repeat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wpe_repeat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user.u_password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user.u_password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.workout.w_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.workout.w_name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

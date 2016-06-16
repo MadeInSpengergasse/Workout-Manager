@@ -14,7 +14,7 @@ namespace _2016_06_13_Workout_Manager_ASP.NET_MVC.Models
     
     public partial class stepsdone
     {
-        public byte sd_id { get; set; }
+        public long sd_id { get; set; }
         public short sd_e_exercise { get; set; }
         public long sd_wpe_workoutplanentry { get; set; }
     

@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TechnikmarktModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="exercise">
+    <Key>
+      <PropertyRef Name="e_id" />
+    </Key>
+    <Property Name="e_id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="e_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="stepsdones" Relationship="Self.sd_e_exerciseconstr" FromRole="exercise" ToRole="stepsdone" />
+    <NavigationProperty Name="workoutsteps" Relationship="Self.ws_e_exerciseconstr" FromRole="exercise" ToRole="workoutsteps" />
+  </EntityType>
+  <EntityType Name="stepsdone">
+    <Key>
+      <PropertyRef Name="sd_id" />
+    </Key>
+    <Property Name="sd_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sd_e_exercise" Type="Int16" Nullable="false" />
+    <Property Name="sd_wpe_workoutplanentry" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="exercise" Relationship="Self.sd_e_exerciseconstr" FromRole="stepsdone" ToRole="exercise" />
+    <NavigationProperty Name="workoutplanentry" Relationship="Self.sd_wpe_workoutplanentryconstr" FromRole="stepsdone" ToRole="workoutplanentry" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="u_name" />
+    </Key>
+    <Property Name="u_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="u_password" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="u_age" Type="Byte" Nullable="false" />
+    <Property Name="u_height" Type="Int16" Nullable="false" />
+    <Property Name="u_weight" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="workoutplanentries" Relationship="Self.wpe_u_userconstr" FromRole="user" ToRole="workoutplanentry" />
+  </EntityType>
+  <EntityType Name="workout">
+    <Key>
+      <PropertyRef Name="w_id" />
+    </Key>
+    <Property Name="w_id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="w_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="workoutplanentries" Relationship="Self.wpe_w_workoutconstr" FromRole="workout" ToRole="workoutplanentry" />
+    <NavigationProperty Name="workoutsteps" Relationship="Self.ws_w_workoutconstr" FromRole="workout" ToRole="workoutsteps" />
+  </EntityType>
+  <EntityType Name="workoutplanentry">
+    <Key>
+      <PropertyRef Name="wpe_id" />
+    </Key>
+    <Property Name="wpe_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="wpe_w_workout" Type="Byte" Nullable="false" />
+    <Property Name="wpe_creationdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="wpe_scheduledate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="wpe_repeat" Type="Boolean" Nullable="false" />
+    <Property Name="wpe_u_user" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="stepsdones" Relationship="Self.sd_wpe_workoutplanentryconstr" FromRole="workoutplanentry" ToRole="stepsdone" />
+    <NavigationProperty Name="user" Relationship="Self.wpe_u_userconstr" FromRole="workoutplanentry" ToRole="user" />
+    <NavigationProperty Name="workout" Relationship="Self.wpe_w_workoutconstr" FromRole="workoutplanentry" ToRole="workout" />
+  </EntityType>
+  <EntityType Name="workoutstep">
+    <Key>
+      <PropertyRef Name="ws_id" />
+    </Key>
+    <Property Name="ws_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ws_e_exercise" Type="Int16" Nullable="false" />
+    <Property Name="ws_w_workout" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="exercise" Relationship="Self.ws_e_exerciseconstr" FromRole="workoutsteps" ToRole="exercise" />
+    <NavigationProperty Name="workout" Relationship="Self.ws_w_workoutconstr" FromRole="workoutsteps" ToRole="workout" />
+  </EntityType>
+  <Association Name="sd_e_exerciseconstr">
+    <End Role="exercise" Type="Self.exercise" Multiplicity="1" />
+    <End Role="stepsdone" Type="Self.stepsdone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="exercise">
+        <PropertyRef Name="e_id" />
+      </Principal>
+      <Dependent Role="stepsdone">
+        <PropertyRef Name="sd_e_exercise" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ws_e_exerciseconstr">
+    <End Role="exercise" Type="Self.exercise" Multiplicity="1" />
+    <End Role="workoutsteps" Type="Self.workoutstep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="exercise">
+        <PropertyRef Name="e_id" />
+      </Principal>
+      <Dependent Role="workoutsteps">
+        <PropertyRef Name="ws_e_exercise" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="sd_wpe_workoutplanentryconstr">
+    <End Role="workoutplanentry" Type="Self.workoutplanentry" Multiplicity="1" />
+    <End Role="stepsdone" Type="Self.stepsdone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="workoutplanentry">
+        <PropertyRef Name="wpe_id" />
+      </Principal>
+      <Dependent Role="stepsdone">
+        <PropertyRef Name="sd_wpe_workoutplanentry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="wpe_u_userconstr">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="workoutplanentry" Type="Self.workoutplanentry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="u_name" />
+      </Principal>
+      <Dependent Role="workoutplanentry">
+        <PropertyRef Name="wpe_u_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="wpe_w_workoutconstr">
+    <End Role="workout" Type="Self.workout" Multiplicity="1" />
+    <End Role="workoutplanentry" Type="Self.workoutplanentry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="workout">
+        <PropertyRef Name="w_id" />
+      </Principal>
+      <Dependent Role="workoutplanentry">
+        <PropertyRef Name="wpe_w_workout" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ws_w_workoutconstr">
+    <End Role="workout" Type="Self.workout" Multiplicity="1" />
+    <End Role="workoutsteps" Type="Self.workoutstep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="workout">
+        <PropertyRef Name="w_id" />
+      </Principal>
+      <Dependent Role="workoutsteps">
+        <PropertyRef Name="ws_w_workout" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TechnikmarktEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="exercises" EntityType="Self.exercise" />
+    <EntitySet Name="stepsdones" EntityType="Self.stepsdone" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <EntitySet Name="workouts" EntityType="Self.workout" />
+    <EntitySet Name="workoutplanentries" EntityType="Self.workoutplanentry" />
+    <EntitySet Name="workoutsteps" EntityType="Self.workoutstep" />
+    <AssociationSet Name="sd_e_exerciseconstr" Association="Self.sd_e_exerciseconstr">
+      <End Role="exercise" EntitySet="exercises" />
+      <End Role="stepsdone" EntitySet="stepsdones" />
+    </AssociationSet>
+    <AssociationSet Name="ws_e_exerciseconstr" Association="Self.ws_e_exerciseconstr">
+      <End Role="exercise" EntitySet="exercises" />
+      <End Role="workoutsteps" EntitySet="workoutsteps" />
+    </AssociationSet>
+    <AssociationSet Name="sd_wpe_workoutplanentryconstr" Association="Self.sd_wpe_workoutplanentryconstr">
+      <End Role="workoutplanentry" EntitySet="workoutplanentries" />
+      <End Role="stepsdone" EntitySet="stepsdones" />
+    </AssociationSet>
+    <AssociationSet Name="wpe_u_userconstr" Association="Self.wpe_u_userconstr">
+      <End Role="user" EntitySet="users" />
+      <End Role="workoutplanentry" EntitySet="workoutplanentries" />
+    </AssociationSet>
+    <AssociationSet Name="wpe_w_workoutconstr" Association="Self.wpe_w_workoutconstr">
+      <End Role="workout" EntitySet="workouts" />
+      <End Role="workoutplanentry" EntitySet="workoutplanentries" />
+    </AssociationSet>
+    <AssociationSet Name="ws_w_workoutconstr" Association="Self.ws_w_workoutconstr">
+      <End Role="workout" EntitySet="workouts" />
+      <End Role="workoutsteps" EntitySet="workoutsteps" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
