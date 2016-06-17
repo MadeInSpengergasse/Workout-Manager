@@ -11,7 +11,7 @@ namespace _2016_06_13_Workout_Manager_ASP.NET_MVC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class user
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,13 +19,34 @@ namespace _2016_06_13_Workout_Manager_ASP.NET_MVC.Models
         {
             this.workoutplanentries = new HashSet<workoutplanentry>();
         }
-    
-        public string u_name { get; set; }
+
+        [Required]
+        [StringLength(150, ErrorMessage = "The password must be at least {2} characters long.", MinimumLength = 6)]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
         public string u_password { get; set; }
+
+        [Required]
+        [Range(6, 119, ErrorMessage = "You must be at least {1} years old to use this service!")]
+        [Display(Name = "Age")]
         public byte u_age { get; set; }
+
+        [Required]
+        [Range(51, 299, ErrorMessage = "Please enter a height in the range of {1} to {2} cm.")]
+        [Display(Name = "Height")]
         public short u_height { get; set; }
+
+        [Required]
+        [Range(14, 255, ErrorMessage = "Please enter a weight in the range of {1} to {2} kg.")]
+        [Display(Name = "Weight")]
         public byte u_weight { get; set; }
-    
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The username must be at least {2} characters long.", MinimumLength = 4)]
+        [DataType(DataType.Text)]
+        [Display(Name = "Username")]
+        public string u_name { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<workoutplanentry> workoutplanentries { get; set; }
     }

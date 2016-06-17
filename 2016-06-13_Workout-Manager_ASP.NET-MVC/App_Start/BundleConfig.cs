@@ -24,7 +24,7 @@ namespace _2016_06_13_Workout_Manager_ASP.NET_MVC
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/flatly.bootstrap.css",
                       "~/Content/site.css"));
         }
     }

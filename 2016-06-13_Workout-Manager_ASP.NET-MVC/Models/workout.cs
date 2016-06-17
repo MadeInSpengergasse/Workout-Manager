@@ -11,7 +11,7 @@ namespace _2016_06_13_Workout_Manager_ASP.NET_MVC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class workout
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,6 +22,10 @@ namespace _2016_06_13_Workout_Manager_ASP.NET_MVC.Models
         }
     
         public byte w_id { get; set; }
+
+        [Required]
+        [Display(Name = "Workout name")]
+        [DataType(DataType.Text)]
         public string w_name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

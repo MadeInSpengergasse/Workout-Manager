@@ -22,18 +22,16 @@ namespace _2016_06_13_Workout_Manager_ASP.NET_MVC.Controllers
                             select e;
 
             if (searchString != null) {
-                
-            page = 1;
-            }
-            else { searchString = currentFilter; }
+                page = 1;
+            } else { searchString = currentFilter; }
+
             ViewBag.CurrentFilter = searchString;
 
             if (!String.IsNullOrEmpty(searchString)) {
                 exercises = exercises.Where(s => s.e_name.ToUpper().Contains(searchString.ToUpper()));
             }
 
-                switch (sortOrder)
-            {
+                switch (sortOrder) {
                 case "name_desc":
                     exercises = exercises.OrderByDescending(e => e.e_name);
                     break;
@@ -42,7 +40,7 @@ namespace _2016_06_13_Workout_Manager_ASP.NET_MVC.Controllers
                     break;
             }
 
-            int pageSize = 3;
+            int pageSize = 5;
             int pageNumber = (page ?? 1);
             return View(exercises.ToPagedList(pageNumber, pageSize));
         }

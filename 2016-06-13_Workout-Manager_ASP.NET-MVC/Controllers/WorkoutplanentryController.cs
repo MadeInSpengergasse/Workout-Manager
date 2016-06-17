@@ -30,14 +30,12 @@ namespace _2016_06_13_Workout_Manager_ASP.NET_MVC.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             workoutplanentry workoutplanentry = db.workoutplanentries.Find(id);
-            workout showworkout = (from w in db.workouts
-                                   where w.w_id == workoutplanentry.workout.w_id
-                                   select w).First(); 
+
             if (workoutplanentry == null)
             {
                 return HttpNotFound();
             }
-            return View(showworkout);
+            return View(workoutplanentry);
         }
 
         // GET: workoutplanentry/Create

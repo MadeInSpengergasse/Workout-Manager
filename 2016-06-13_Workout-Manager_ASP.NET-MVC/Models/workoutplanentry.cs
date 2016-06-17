@@ -11,7 +11,7 @@ namespace _2016_06_13_Workout_Manager_ASP.NET_MVC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class workoutplanentry
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,17 +19,36 @@ namespace _2016_06_13_Workout_Manager_ASP.NET_MVC.Models
         {
             this.stepsdones = new HashSet<stepsdone>();
         }
-    
+
         public long wpe_id { get; set; }
+
+        [Required]
+        [Display(Name = "Workout")]
+        [DataType(DataType.Text)]
         public byte wpe_w_workout { get; set; }
+
+        [Required]
+        [Display(Name = "Creation date")]
+        [DataType(DataType.Date)]
         public System.DateTime wpe_creationdate { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        [Display(Name = "Schedule Date")]
         public System.DateTime wpe_scheduledate { get; set; }
+
+        [Display(Name = "Repeat")]
         public bool wpe_repeat { get; set; }
+
         public string wpe_u_user { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<stepsdone> stepsdones { get; set; }
         public virtual user user { get; set; }
+
+        [Required]
+        [Display(Name = "Workout")]
+        [DataType(DataType.Text)]
         public virtual workout workout { get; set; }
     }
 }

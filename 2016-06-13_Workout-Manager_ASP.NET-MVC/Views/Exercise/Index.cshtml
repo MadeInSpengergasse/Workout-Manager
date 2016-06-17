@@ -4,25 +4,26 @@
 @model PagedList.IPagedList<_2016_06_13_Workout_Manager_ASP.NET_MVC.Models.exercise>
 @using PagedList.Mvc;
 
- < link href = "~/Content/PagedList.css" rel = "stylesheet" type = "text/css" /> 
+ <link href = "~/Content/PagedList.css" rel = "stylesheet" type = "text/css" /> 
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Exercises";
 }
 
-<h2>Index</h2>
+<h2>Exercises</h2>
 
 @using (Html.BeginForm("Index", "Exercise", FormMethod.Get)) {
     <p>
-        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string) )
-        <input type="submit" value="Search" />
+        Find by name: <br />
+        @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search"/>
     </p>
 }
 
 <table class="table">
     <tr>
         <th>
-            @Html.ActionLink("Exercises names", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            @Html.ActionLink("Exercise names", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
         </th>
     </tr>
 

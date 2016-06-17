@@ -180,3 +180,8 @@ C:\Users\Raphael\Documents\Visual Studio 2015\Projects\Workout-Manager\2016-06-1
 C:\Users\Raphael\Documents\Visual Studio 2015\Projects\Workout-Manager\2016-06-13_Workout-Manager_ASP.NET-MVC\bin\PagedList.xml
 C:\Users\Raphael\Documents\Visual Studio 2015\Projects\Workout-Manager\2016-06-13_Workout-Manager_ASP.NET-MVC\bin\PagedList.Mvc.xml
 C:\Users\Raphael\Documents\Visual Studio 2015\Projects\Workout-Manager\2016-06-13_Workout-Manager_ASP.NET-MVC\obj\Debug\2016-06-13_Workout-Manager_ASP.NET-MVC.csprojResolveAssemblyReference.cache
+D:\Users\David\Documents\Visual Studio 2015\Projects\2016-06-13_Workout-Manager_ASP.NET-MVC\2016-06-13_Workout-Manager_ASP.NET-MVC\bin\PagedList.dll
+D:\Users\David\Documents\Visual Studio 2015\Projects\2016-06-13_Workout-Manager_ASP.NET-MVC\2016-06-13_Workout-Manager_ASP.NET-MVC\bin\PagedList.Mvc.dll
+D:\Users\David\Documents\Visual Studio 2015\Projects\2016-06-13_Workout-Manager_ASP.NET-MVC\2016-06-13_Workout-Manager_ASP.NET-MVC\bin\PagedList.xml
+D:\Users\David\Documents\Visual Studio 2015\Projects\2016-06-13_Workout-Manager_ASP.NET-MVC\2016-06-13_Workout-Manager_ASP.NET-MVC\bin\PagedList.Mvc.xml
+D:\Users\David\Documents\Visual Studio 2015\Projects\2016-06-13_Workout-Manager_ASP.NET-MVC\2016-06-13_Workout-Manager_ASP.NET-MVC\obj\Debug\2016-06-13_Workout-Manager_ASP.NET-MVC.csprojResolveAssemblyReference.cache
